@@ -34,15 +34,15 @@ app.get('/api/hello', function (req, res) {
 app.get('/api/whoami', (req, res) =>{
 
   //Ip Get
-  // console.log(req.ip);
+  console.log(req.ip);
   //User-Agent
   let len = req.rawHeaders.length;
   let softwareObj = {};
   for(let i = 0; i<len; i+=2){
     softwareObj[`${req.rawHeaders[i]}`] = req.rawHeaders[i+1];
   }
-  // console.log(software['User-Agent']);
-  // console.log(software['Accept-Language']);
+  console.log(software['User-Agent']);
+  console.log(software['Accept-Language']);
 
   
   res.send({
