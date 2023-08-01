@@ -41,11 +41,11 @@ app.get('/api/whoami', (req, res) =>{
   for(let i = 0; i<len; i+=2){
     softwareObj[`${req.rawHeaders[i]}`] = req.rawHeaders[i+1];
   }
-  console.log(software['User-Agent']);
-  console.log(software['Accept-Language']);
+  console.log(softwareObj['User-Agent']);
+  console.log(softwareObj['Accept-Language']);
 
   
-  res.send({
+  res.json({
     ipaddress : req.ip,
     language : softwareObj['Accept-Language'],
     software : softwareObj['User-Agent']
